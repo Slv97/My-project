@@ -1,0 +1,47 @@
+.background {
+    width: 100vw;
+    height: 100vh;
+    background: #111;    
+}
+
+.wrapper {
+    color: transparent;
+    font-size: 16rem;
+    font-family: 'Vibur', cursive;
+}
+
+.wrapper .symbol {
+    animation: animate 3s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+    letter-spacing: 1rem;
+}
+
+@keyframes animate {
+    0% {
+        color: #fff;
+        filter: blur(1px) hue-rotate(0deg);
+        text-shadow: 0 0 10px #00b3ff,
+                     0 0 20px #00b3ff,
+                     0 0 40px #00b3ff,
+                     0 0 80px #00b3ff,
+                     0 0 120px #00b3ff,
+                     0 0 200px #00b3ff,
+                     0 0 300px #00b3ff,
+                     0 0 400px #00b3ff;
+    }
+    30%, 70% {
+        color: #fff;
+        filter: blur(1px) hue-rotate(360deg);
+        text-shadow: 0 0 10px #00b3ff,
+                     0 0 20px #00b3ff,
+                     0 0 40px #00b3ff,
+                     0 0 80px #00b3ff,
+                     0 0 120px #00b3ff,
+                     0 0 200px #00b3ff;
+    }
+    100% {
+        color: transparent;
+        box-shadow: none;
+        filter: blur(1px) hue-rotate(0deg);
+    }
+}
