@@ -10,6 +10,10 @@
     font-family: 'Vibur', cursive;
 }
 
+.wrapper:first-letter {
+    text-transform: uppercase;
+}
+
 .wrapper .symbol {
     animation: animate 3s linear infinite;
     animation-delay: calc(0.1s * var(--i));
