@@ -1,21 +1,14 @@
-.background {
-    background:  #141414;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.wrapper {
+    font-size: 12vw;
+    font-family:  consolas;
+    line-height: 16vh;
+    text-align: center;
+
 }
 
-.wrapper {
-    font-size: 16vw;
-    font-family: 'Vibur', cursive;
-    padding: 6vw;
-}
-.wrapper:first-letter {
+/* .wrapper:first-letter {
     text-transform: uppercase;
-}
+} */
 
 .wrapper .text {
     color: #c6ffe2;
