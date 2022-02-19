@@ -1,9 +1,6 @@
 .wrapper {
-    font-size: 12vw;
     font-family:  consolas;
-    line-height: 16vh;
     text-align: center;
-
 }
 
 /* .wrapper:first-letter {
