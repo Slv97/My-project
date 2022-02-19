@@ -14,7 +14,7 @@ const FirstMessage = () => {
 
     useEffect(() => {
         const timer = setTimeout(function () {
-            myContainer.current.style.display = "block";
+            myContainer.current.style.opacity = "1";
         }, 1000);
         return () => clearTimeout(timer);
     }, []);

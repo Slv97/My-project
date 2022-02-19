@@ -8,7 +8,6 @@ import NeonText from "../NeonText/NeonText";
 function WelcomePage() {
     const handleClick = () => {
         console.log("click");
-        //<Navigate to={"/one"} />
     };
 
     const btnColorTurquoise = "#05EEFF";
