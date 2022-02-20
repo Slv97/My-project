@@ -22,9 +22,9 @@ const ScreensaverMatrix = () => {
         setStyle({
             ctx: canvas.current.getContext("2d"),
             x: canvas.current.width,
-            y: canvas.current.height
+            y: canvas.current.height,
         });
-    }, [canvas.current]);
+    }, []);
 
     console.log("canvas", style.ctx);
 
@@ -36,7 +36,6 @@ const ScreensaverMatrix = () => {
 
     const random = (items) => items[Math.floor(Math.random() * items.length)];
 
-    // const hex = "0123456789ABCDEF好GHJKLMNPQR女STVWXYZ".split("");
     const hex = "0123456789ABCDEFLN".split("");
 
     useEffect(() => {
@@ -44,21 +43,19 @@ const ScreensaverMatrix = () => {
             ctx.fillStyle = "rgba(0,0,0,.05)";
             ctx.fillRect(0, 0, w, h);
             ctx.fillStyle = "#0f0";
-
-            // ctx.font = "small-caps 24px Arial";
             ctx.font = "small-caps 20px Arial";
-            
-            p.map((v, i) => {
+
+            p.forEach((v, i) => {
                 ctx.fillText(random(hex), i * 20, v);
                 p[i] = v >= h || v > 50 + 10000 * Math.random() ? 0 : v + 20;
             });
         }, 1000 / 15);
         return () => clearInterval(t);
-    }, [ctx]);
+    }, [ctx, h, hex, p, w]);
 
     return (
         <div className={s.wrap}>
-            <canvas ref={canvas} width={style.x} height={style.y}/>
+            <canvas ref={canvas} width={style.x} height={style.y} />
         </div>
     );
 };
