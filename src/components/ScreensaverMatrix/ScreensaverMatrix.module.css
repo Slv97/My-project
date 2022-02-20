@@ -1,9 +1,6 @@
 .wrap {
     margin: 0;
-  overflow: hidden;
-}
-
-.test {
-    color: aliceblue;
-    /* color: rgba(0,0,0,.05) */
+    padding: 0;
+    overflow: hidden;
+    font-size: 50px;
 }
