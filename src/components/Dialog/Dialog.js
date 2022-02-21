@@ -1,10 +1,10 @@
 import s from "./Dialog.module.css";
 
-const Dialog = () => {
+const Dialog = ({text}) => {
     return (
-        <div>
-            <div>photo</div>
-            <div>message</div>
+        <div className={s.wrapper}>
+            <div className={s.photo}></div>
+            <div className={s.text}>{text}</div>
         </div>
     );
 };

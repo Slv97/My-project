@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import s from "./ScreensaverMatrix.module.css";
 
-const ScreensaverMatrix = () => {
+const ScreensaverMatrix = ({children}) => {
     const [size, setSize] = useState({
         x: window.innerWidth,
         y: window.innerHeight,
@@ -56,6 +56,7 @@ const ScreensaverMatrix = () => {
     return (
         <div className={s.wrap}>
             <canvas ref={canvas} width={style.x} height={style.y} />
+            {children}
         </div>
     );
 };

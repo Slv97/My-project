@@ -1,5 +1,5 @@
 .mainContainer {
-    height: 318px;
+    height: 220px;
     width: 566px;
 
     display: flex;
@@ -25,19 +25,20 @@
 .btnWrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .arrowR,
 .arrowL {
     cursor: pointer;
     border: none;
-    font-size: 34px;
-    background-color: #fff;
+    font-size: 6vw;
+    background-color: inherit;
     padding-right: 4px;
+    color: #fff;
 }
 
 .arrowR {
-    margin-left: 68px;
     margin-right: 14px;
 }
 
@@ -62,6 +63,6 @@
 }
 
 .pointActive {
-    background-color: #ff73b1;
+    background-color: #0f0;
     border: none;
 }

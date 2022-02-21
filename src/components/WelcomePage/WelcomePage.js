@@ -4,7 +4,6 @@ import "./WelcomePage.css";
 
 import MyBtn from "../MyBtn/MyBtn";
 import NeonText from "../NeonText/NeonText";
-import Loading from "../Loading/Loading";
 
 function WelcomePage() {
     const handleClick = () => {
@@ -39,7 +38,7 @@ function WelcomePage() {
                     />
                 </Link>
 
-                <Link to="/two" className="linkBtn">
+                <Link to="/conect" className="linkBtn">
                     <MyBtn
                         text={"..blue pill.."}
                         btnColor={btnColorTurquoise}
