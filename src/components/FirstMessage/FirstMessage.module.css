@@ -1,3 +1,12 @@
+.neonWrapper {    
+    padding: 28vh 0 1vh 0;
+    font-size: 6vh;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    opacity: 1;
+}
+
 .hideBlock {
     opacity: 0;
     animation: showDiv 3s forwards;

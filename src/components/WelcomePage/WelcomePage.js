@@ -4,6 +4,7 @@ import "./WelcomePage.css";
 
 import MyBtn from "../MyBtn/MyBtn";
 import NeonText from "../NeonText/NeonText";
+import Loading from "../Loading/Loading";
 
 function WelcomePage() {
     const handleClick = () => {
@@ -16,13 +17,16 @@ function WelcomePage() {
     const btnColorRed = "#F13806";
     const txtHoverColorRed = "#691801";
 
+    const neonColorGreen = "30, 245, 48";
+    const neonTxtColorGreen = "#c6ffe2";
+
     return (
         <div>
             <div className="neonWrapper">
-                <NeonText text="Welcome" />
-                <NeonText text="it's time" />
-                <NeonText text="to" />
-                <NeonText text="make choice" />
+                <NeonText text="Welcome" neonColor={neonColorGreen} neonTxtColor={neonTxtColorGreen} />
+                <NeonText text="it's time" neonColor={neonColorGreen} neonTxtColor={neonTxtColorGreen} />
+                <NeonText text="to" neonColor={neonColorGreen} neonTxtColor={neonTxtColorGreen} />
+                <NeonText text="make choice" neonColor={neonColorGreen} neonTxtColor={neonTxtColorGreen} />
             </div>
 
             <div className="myBtnWrapper">

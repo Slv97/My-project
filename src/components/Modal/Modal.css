@@ -1,0 +1,44 @@
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(9, 48, 85, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modalContent {
+    padding: 35px 140px 0 224px;
+    border-radius: 40px;
+    background-color: #fff;
+    height: 538px;
+    width: 540px;
+    transform: scale(0.5);
+    transition: 0.4s all;
+    margin-top: 52px;
+}
+
+.modalContent.active {
+    transform: scale(1);
+}
+
+.btnClose {
+    top: 10px;
+    right: 30px;
+    font-size: 55px;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+}

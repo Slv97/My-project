@@ -1,0 +1,67 @@
+.mainContainer {
+    height: 318px;
+    width: 566px;
+
+    display: flex;
+    align-items: center;
+}
+
+.window {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.allPagesContainer {
+    height: 100%;
+    display: flex;
+
+    transition: translate;
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+.btnWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.arrowR,
+.arrowL {
+    cursor: pointer;
+    border: none;
+    font-size: 34px;
+    background-color: #fff;
+    padding-right: 4px;
+}
+
+.arrowR {
+    margin-left: 68px;
+    margin-right: 14px;
+}
+
+.arrowL {
+    margin-left: 10px;
+}
+
+.point,
+.pointActive {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin-right: 8px;
+    margin-top: 4px;
+    bottom: 0px;
+}
+
+.point {
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+.pointActive {
+    background-color: #ff73b1;
+    border: none;
+}
