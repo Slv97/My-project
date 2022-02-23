@@ -1,61 +1,94 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import s from "./MemoryGame.module.css";
+import imgRabbit from "../../assets/images/memoryGame/rabbit.jpg";
+import imgEmpty from "../../assets/images/wall5.jpg";
+import imgBack from "../../assets/images/wall6.jpg";
 
-const MemoryCard = () => {
-    const test = [
-        {
-            value: 0,
-            img: `../../assets/images/memoryGame/rabbit.jpg`,
-        },
-        {
-            value: 1,
-            img: `../../assets/images/memoryGame/wall5.jpg`,
-        },
-    ];
-
-    // const [card, setCard] = useState({value: null})
-    const [thisCard, setThisCard] = useState(false);
+const MemoryCard = ({ value, img, description, click , onClick, ...props }) => {   
+   
+    const [thisCard, setThisCard] = useState(click);
     const flipCard = () => {
-        setThisCard(true) ? setThisCard(false) : setThisCard(true);
-        // setCard({value: 'x'})
+        click ? setThisCard(false) : setThisCard(true);
     };
-
-    // const flip = thisCard ? `${s.memoryCard}` : `${s.memoryCard} ${s.flip}`
     const flip = thisCard ? `${s.memoryCard} ${s.flip}` : `${s.memoryCard}`;
+
+    
 
     return (
         <div className={flip} onClick={flipCard}>
-            <img
-                className={s.frontFace}
-                src={require(`../../assets/images/memoryGame/rabbit.jpg`)}
-                // src={require(`../../assets/images/wall5.jpg`)}
-                alt="rabbit"
-            ></img>
-            <img
-                className={s.backFace}
-                src={require(`../../assets/images/wall6.jpg`)}
-                alt="back"
-            ></img>
-            {/* {card.value} */}
+            <img className={s.frontFace} src={img} alt={description}></img>
+            <img className={s.backFace} src={imgBack} alt="back"></img>
         </div>
     );
 };
 
 const MemoryGame = () => {
-    const renderCard = (i) => {
-        return <MemoryCard value={i} />;
-    };
+    const test = [
+        {
+            value: 0,
+            img: imgRabbit,
+            description: "rabbit",
+            click: false,
+        },
+        {
+            value: 1,
+            img: imgEmpty,
+            description: "empty",
+            click: false,
+        },
+        {
+            value: 2,
+            img: imgEmpty,
+            description: "empty",
+            click: false,
+        },
+        {
+            value: 3,
+            img: imgEmpty,
+            description: "empty",
+            click: false,
+        },
+        {
+            value: 4,
+            img: imgEmpty,
+            description: "empty",
+            click: false,
+        },
+        {
+            value: 5,
+            img: imgRabbit,
+            description: "rabbit",
+            click: false,
+        },
+    ];
+
+    const  [on, setOn] = useState(false)
+
+    useEffect(() => {
+        let testNew = test.slice()
+        setOn(true)
+        testNew.click=on
+    }, [])  
+
+    
+    
+    let memoryCardElement = test.map((el, i) => {    
+        return (
+            <MemoryCard
+                key={i}
+                value={el.value}
+                img={el.img}
+                description={el.description}
+                click={el.click}
+                onClick={() => setOn(true)}
+                
+            />
+        );
+    });
 
     return (
         <div className={s.wrapper}>
-            <div className={s.memoryGame}>
-                {renderCard(0)}
-                {renderCard(1)}
-                {renderCard(2)}
-                {renderCard(3)}
-                {renderCard(4)}
-                {renderCard(5)}
-            </div>
+            <div className={s.memoryGame}>{memoryCardElement}</div>
         </div>
     );
 };
