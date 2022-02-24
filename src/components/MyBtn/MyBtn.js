@@ -1,6 +1,6 @@
 import s from "./MyBtn.module.css";
 
-const MyBtn = ({text, btnColor, txtHoverColor, ...props}) => {
+const MyBtn = ({text, btnColor, txtHoverColor, children, ...props}) => {
     
     return (
         <div className={s.wrapper} style={{'--btnColor': btnColor, '--txtHoverColor': txtHoverColor}}>
@@ -9,7 +9,7 @@ const MyBtn = ({text, btnColor, txtHoverColor, ...props}) => {
                 <div className={s.border}></div>
                 <div className={s.border}></div>
                 <div className={s.border}></div>
-                {text}
+                {text} {children}
             </div>
         </div>
     );
