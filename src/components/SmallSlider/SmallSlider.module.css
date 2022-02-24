@@ -1,7 +1,6 @@
 .mainContainer {
     height: 220px;
     width: 566px;
-
     display: flex;
     align-items: center;
 }
@@ -65,4 +64,36 @@
 .pointActive {
     background-color: #0f0;
     border: none;
+}
+
+
+
+@media (min-width: 1000px) {
+    .mainContainer {
+        height: 300px;
+    }
+}
+
+@media (min-width: 1540px) {
+    .mainContainer {
+        height: 400px;
+    }
+}
+
+@media (min-width: 1690px) {
+    .mainContainer {
+        height: 600px;
+    }
+}
+
+@media (min-width: 2050px) {
+    .mainContainer {
+        height: 800px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .mainContainer {
+        height: 900px;
+    }
 }

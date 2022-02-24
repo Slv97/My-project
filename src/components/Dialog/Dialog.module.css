@@ -18,3 +18,15 @@
     font-size: 4vw;
     width: 75%;
 }
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 5vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .text {
+        font-size: 3vw;
+    }
+}

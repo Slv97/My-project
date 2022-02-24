@@ -8,12 +8,14 @@ import s from "./ConectPage.module.css";
 const ConectPage = () => {
     const [modalActive, setModalActive] = useState(false);
 
-    const phraseOne = "Oh, we did it! The connection continues to be unstable, but we did it! I still can't believe it..."
-    const phraseTwo = "No time to waste. You don't know what it is, but it's there, like a splinter in your mind, driving you mad. Follow the rabbit!"
-           
+    const phraseOne =
+        "Oh, we did it! The connection continues to be unstable, but we did it! I still can't believe it...";
+    const phraseTwo =
+        "No time to waste. You don't know what it is, but it's there, like a splinter in your mind, driving you mad. Follow the rabbit!";
+
     useEffect(() => {
         const timer = setTimeout(function () {
-            setModalActive(true)
+            setModalActive(true);
         }, 3000);
         return () => clearTimeout(timer);
     }, []);
@@ -27,7 +29,7 @@ const ConectPage = () => {
                             <Dialog text={phraseOne} />
                         </div>
                         <div className={s.smallSlider}>
-                        <Dialog text={phraseTwo} />
+                            <Dialog text={phraseTwo} />
                         </div>
                     </SmallSlider>
                 </Modal>

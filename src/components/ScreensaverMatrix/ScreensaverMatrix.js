@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import s from "./ScreensaverMatrix.module.css";
 
-const ScreensaverMatrix = ({children}) => {
+const ScreensaverMatrix = ({ children }) => {
     const [size, setSize] = useState({
         x: window.innerWidth,
         y: window.innerHeight,
