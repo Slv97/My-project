@@ -38,7 +38,7 @@ const SmallSlider = ({ children }) => {
                 });
             })
         );
-    }, []);
+    }, [children]);
 
     return (
         <div>

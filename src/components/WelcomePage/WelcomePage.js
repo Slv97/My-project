@@ -5,9 +5,6 @@ import MyBtn from "../common/MyBtn/MyBtn";
 import NeonText from "../common/NeonText/NeonText";
 
 function WelcomePage() {
-    const handleClick = () => {
-        console.log("click");
-    };
 
     const btnColorTurquoise = "#05EEFF";
     const txtHoverColorTurquoise = "#038296";
@@ -49,7 +46,6 @@ function WelcomePage() {
                         text={"..red pill.."}
                         btnColor={btnColorRed}
                         txtHoverColor={txtHoverColorRed}
-                        onClick={handleClick}
                     />
                 </Link>
 
@@ -58,7 +54,6 @@ function WelcomePage() {
                         text={"..blue pill.."}
                         btnColor={btnColorTurquoise}
                         txtHoverColor={txtHoverColorTurquoise}
-                        onClick={handleClick}
                     />
                 </Link>
             </div>

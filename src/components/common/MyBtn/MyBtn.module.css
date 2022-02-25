@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: consolas;    
+    font-family: consolas;
 }
 
 .btn {
@@ -20,15 +20,16 @@
     transition: 0.2s;
     cursor: pointer;
     border-radius: 4px;
-    text-shadow: 0 0 6px rgba(202,228,225,0.92),
-    0 0 30px rgba(202,228,225,0.34);
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
+        0 0 30px rgba(202, 228, 225, 0.34);
     filter: blur(0.6px);
 }
 
 .btn:hover {
     color: var(--txtHoverColor);
     background: var(--btnColor);
-    box-shadow: 0 0 10px var(--btnColor), 0 0 40px var(--btnColor), 0 0 80px var(--btnColor);
+    box-shadow: 0 0 10px var(--btnColor), 0 0 40px var(--btnColor),
+        0 0 80px var(--btnColor);
     transition-delay: 1s;
     text-shadow: none;
     filter: blur(0px);
@@ -92,4 +93,18 @@
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.75s;
+}
+
+@media (max-width: 600px) {
+    .btn {
+        filter: blur(0px);
+        padding: 15px 5px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 390px) {
+    .btn {
+        margin-bottom: 20px;
+    }
 }

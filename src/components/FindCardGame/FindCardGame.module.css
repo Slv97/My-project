@@ -3,7 +3,7 @@
     display: flex;
 }
 
-.memoryGame {
+.findCardGame {
     width: 640px;
     height: 640px;
     margin: auto;
@@ -12,7 +12,7 @@
     perspective: 1000px;
 }
 
-.memoryCard {
+.findCard {
     width: calc(33.333% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
@@ -23,12 +23,12 @@
     transition: transform 0.5s;
 }
 
-.memoryCard:active {
+.findCard:active {
     transform: scale(0.97);
     transition: transform 0.2s;
 }
 
-.memoryCard.flip {
+.findCard.flip {
     transform: rotateY(180deg);
 }
 
@@ -60,4 +60,16 @@
     text-decoration: none;
     color: inherit;
     background: inherit;
+}
+
+@media (max-width: 512px) {
+    .wrapBtn {
+        margin: 58% 0%;
+    }
+
+    .frontFace,
+    .backFace {
+        height: 70%;
+        padding: 8px;
+    }
 }

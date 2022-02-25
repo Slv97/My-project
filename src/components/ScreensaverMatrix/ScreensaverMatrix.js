@@ -26,8 +26,6 @@ const ScreensaverMatrix = ({ children }) => {
         });
     }, []);
 
-    console.log("canvas", style.ctx);
-
     const w = (style.x = size.x);
     const h = (style.y = size.y);
     const ctx = style.ctx;

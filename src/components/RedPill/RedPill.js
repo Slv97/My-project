@@ -29,11 +29,11 @@ const RedPill = () => {
     }, [Load, ConnectionLost]);
 
     const [clickCount, setClick] = useState(0);
-    const [test, setTest] = useState(false);
+    const [linkChange, setLinkChange] = useState(false);
 
-    const handleMouseUp = () => {
+    const changeLink = () => {
         if (clickCount >= 0) {
-            setTest(true);
+            setLinkChange(true);
         }
 
         setClick(clickCount + 1);
@@ -51,13 +51,13 @@ const RedPill = () => {
                 <Loading />
             </div>
 
-            {test ? (
+            {linkChange ? (
                 <Link to="/conect" className="myBtnWrapper linkBtn">
                     <MyBtn
                         text={"..try again.."}
                         btnColor={btnColorGreen}
                         txtHoverColor={txtHoverColorGreen}
-                        onClick={handleMouseUp}
+                        onClick={changeLink}
                     />
                 </Link>
             ) : (
@@ -74,7 +74,7 @@ const RedPill = () => {
                             text={"..try again.."}
                             btnColor={btnColorGreen}
                             txtHoverColor={txtHoverColorGreen}
-                            onClick={handleMouseUp}
+                            onClick={changeLink}
                         />
                     </Link>
                 </div>

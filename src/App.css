@@ -29,3 +29,10 @@
     justify-content: center;
     font-size: 3vw;
 }
+
+@media (max-width: 390px) {
+    .myBtnWrapper {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}

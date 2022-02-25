@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import s from "./FindCardGame.module.css";
-import imgRabbit from "../../assets/images/memoryGame/rabbit.jpg";
+import imgRabbit from "../../assets/images/rabbit.jpg";
 import imgEmpty from "../../assets/images/wall5.jpg";
 import imgBack from "../../assets/images/wall6.jpg";
 
@@ -16,7 +16,7 @@ const FindCard = ({ value, img, description, click, onClick, ...props }) => {
     const flipCard = () => {
         click ? setThisCard(false) : setThisCard(true);
     };
-    const flip = thisCard ? `${s.memoryCard} ${s.flip}` : `${s.memoryCard}`;
+    const flip = thisCard ? `${s.findCard} ${s.flip}` : `${s.findCard}`;
 
     const rootEl = useRef(null);
 
@@ -60,7 +60,7 @@ const FindCard = ({ value, img, description, click, onClick, ...props }) => {
 };
 
 const FindCardGame = () => {
-    const test = [
+    const cards = [
         {
             value: 0,
             img: imgEmpty,
@@ -99,7 +99,7 @@ const FindCardGame = () => {
         },
     ];
 
-    let findCardElement = test.map((el, i) => {
+    let findCardElement = cards.map((el, i) => {
         return (
             <FindCard
                 key={i}
@@ -113,7 +113,7 @@ const FindCardGame = () => {
 
     return (
         <div className={s.wrapper}>
-            <div className={s.memoryGame}>{findCardElement}</div>
+            <div className={s.findCardGame}>{findCardElement}</div>
         </div>
     );
 };
