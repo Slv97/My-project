@@ -7,29 +7,6 @@
     font-family: consolas;    
 }
 
-/* :root { */
-    /* --backgroundColor: #031321; */
-    /* --backgroundColor: #041300; */
-    /* --btnColor: #2196f3;
-    --txtHoverColor: #255784; */
-    /* --btnColor: #ff00ff;
-    --txtHoverColor: #cf0060;
-    --btnColor: #39FF14;
-    --txtHoverColor: #168A00; */
-    /* --btnColor: #bc13fe;
-    --txtHoverColor: #670a8b; */
-    /* --btnColor: #8b00ff ;
-    --txtHoverColor: #670a8b; */
-    /* --btnColor: #05EEFF;
-    --txtHoverColor: #038296; */
-    /* --btnColor: #04D435;
-    --txtHoverColor: #168A00; */
-    /* --btnColor: #00ff00;
-    --txtHoverColor: #168A00; */
-    /* --btnColor: var(--btnColor);
-    --txtHoverColor: var(--txtHoverColor); */
-/* } */
-
 .btn {
     position: relative;
     display: inline-block;
@@ -38,7 +15,6 @@
     text-transform: uppercase;
     letter-spacing: 4px;
     text-decoration: none;
-    /* font-size: 3vw; */
     font-weight: bold;
     overflow: hidden;
     transition: 0.2s;

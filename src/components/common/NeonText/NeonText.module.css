@@ -3,10 +3,6 @@
     text-align: center;
 }
 
-/* .wrapper:first-letter {
-    text-transform: uppercase;
-} */
-
 .wrapper .text {
     color: var(--neonTxtColor);
     animation: neon .08s ease-in-out infinite alternate;

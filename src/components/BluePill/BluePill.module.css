@@ -1,0 +1,34 @@
+.wrapper {
+    background: #111111;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/images/zzz4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+    color: #c6edff;
+    color: rgba(70, 109, 236, 0.884);
+}
+
+.text {
+    font-size: 2vw;
+    position: absolute;
+    padding: 0px 60px 0 0;
+    top: 136px;
+    right: 0;
+    width: 360px;
+}
+
+@media (min-width: 320px) {
+    .text {
+        width: 310px;
+    }
+}
+
+@media (min-width: 1450px) {
+    .text {
+        width: 460px;
+    }
+}

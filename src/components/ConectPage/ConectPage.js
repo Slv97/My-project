@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import s from "./ConectPage.module.css";
+
 import Dialog from "../Dialog/Dialog";
 import Modal from "../Modal/Modal";
 import ScreensaverMatrix from "../ScreensaverMatrix/ScreensaverMatrix";
 import SmallSlider from "../SmallSlider/SmallSlider";
-import s from "./ConectPage.module.css";
 
 const ConectPage = () => {
     const [modalActive, setModalActive] = useState(false);

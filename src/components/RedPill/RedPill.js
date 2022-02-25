@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-
-import NeonText from "../NeonText/NeonText";
-import MyBtn from "../MyBtn/MyBtn";
-
-import s from "./FirstMessage.module.css";
 import { Link } from "react-router-dom";
-import Loading from "../Loading/Loading";
+import s from "./RedPill.module.css";
 
-const FirstMessage = () => {
+import Loading from "../Loading/Loading";
+import NeonText from "../common/NeonText/NeonText";
+import MyBtn from "../common/MyBtn/MyBtn";
+
+const RedPill = () => {
     const btnColorGreen = "#00ff00";
     const txtHoverColorGreen = "#168A00";
 
@@ -25,23 +24,20 @@ const FirstMessage = () => {
             ConnectionLost.current.style.opacity = "1";
             Load.current.style.opacity = "0";
         }, 2000);
+
         return () => clearTimeout(timer);
-    }, []);
+    }, [Load, ConnectionLost]);
 
     const [clickCount, setClick] = useState(0);
     const [test, setTest] = useState(false);
 
     const handleMouseUp = () => {
-        console.log("event");
-        if (clickCount > 1) {
-            console.log("event1");
+        if (clickCount >= 0) {
             setTest(true);
         }
-        // setTest(false);
+
         setClick(clickCount + 1);
-        console.log("event2");
         Load.current.style.opacity = "1";
-        ConnectionLost.current.style.opacity = "0";
     };
 
     return (
@@ -55,36 +51,36 @@ const FirstMessage = () => {
                 <Loading />
             </div>
 
-            <div ref={ConnectionLost} className={s.hideBlock} id="hideBlock">
-                <div className="neonWrapper">
-                    <NeonText
-                        text={"sorry, connection lost"}
-                        neonColor={neonColorRed}
-                        neonTxtColor={neonTxtColorRed}
+            {test ? (
+                <Link to="/conect" className="myBtnWrapper linkBtn">
+                    <MyBtn
+                        text={"..try again.."}
+                        btnColor={btnColorGreen}
+                        txtHoverColor={txtHoverColorGreen}
+                        onClick={handleMouseUp}
                     />
+                </Link>
+            ) : (
+                <div ref={ConnectionLost} className={s.hideBlock}>
+                    <div className="neonWrapper">
+                        <NeonText
+                            text={"sorry, connection lost"}
+                            neonColor={neonColorRed}
+                            neonTxtColor={neonTxtColorRed}
+                        />
+                    </div>
+                    <Link to="/redPill" className="myBtnWrapper linkBtn">
+                        <MyBtn
+                            text={"..try again.."}
+                            btnColor={btnColorGreen}
+                            txtHoverColor={txtHoverColorGreen}
+                            onClick={handleMouseUp}
+                        />
+                    </Link>
                 </div>
-
-                {test ? (
-                    <Link to="/conect" className="myBtnWrapper linkBtn">
-                        <MyBtn
-                            text={"..try again.."}
-                            btnColor={btnColorGreen}
-                            txtHoverColor={txtHoverColorGreen}
-                            onClick={handleMouseUp}
-                        />
-                    </Link>
-                ) : (
-                    <Link to="/one" className="myBtnWrapper linkBtn">
-                        <MyBtn
-                            text={"..try again.."}
-                            btnColor={btnColorGreen}
-                            txtHoverColor={txtHoverColorGreen}
-                            onClick={handleMouseUp}
-                        />
-                    </Link>
-                )}
-            </div>
+            )}
         </div>
     );
 };
-export default FirstMessage;
+
+export default RedPill;

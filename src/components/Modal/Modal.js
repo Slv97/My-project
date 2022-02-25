@@ -6,7 +6,7 @@ const Modal = ({ active, setActive, children }) => {
     return (
         <div className={active ? "modal active" : "modal"}>
             <div className={active ? "modalContent active" : "modalContent"}>
-                <Link to="/memoryGame" className="linkBtn">
+                <Link to="/findCardGame" className="linkBtn">
                     <div
                         className="btnClose"
                         onClick={() => {

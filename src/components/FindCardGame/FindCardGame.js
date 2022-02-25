@@ -1,11 +1,12 @@
-import { useState, useEffect, useRef } from "react";
-import s from "./MemoryGame.module.css";
+import { useState, useRef } from "react";
+import s from "./FindCardGame.module.css";
 import imgRabbit from "../../assets/images/memoryGame/rabbit.jpg";
 import imgEmpty from "../../assets/images/wall5.jpg";
 import imgBack from "../../assets/images/wall6.jpg";
-import MyBtn from "../MyBtn/MyBtn";
 
-const MemoryCard = ({ value, img, description, click, onClick, ...props }) => {
+import MyBtn from "../common/MyBtn/MyBtn";
+
+const FindCard = ({ value, img, description, click, onClick, ...props }) => {
     const btnColorGreen = "#00ff00";
     const txtHoverColorGreen = "#168A00";
 
@@ -19,26 +20,23 @@ const MemoryCard = ({ value, img, description, click, onClick, ...props }) => {
 
     const rootEl = useRef(null);
 
-    useEffect(() => {
-        const onClick = e => rootEl.current.contains(e.target) || console.log('клик вне компонента');
-        document.addEventListener('click', onClick);
-        return () => document.removeEventListener('click', onClick);
-      }, []);
-
     function handleMouseUp(event) {
-        
         if (
             event.target.previousElementSibling.attributes.alt.textContent ===
             "rabbit"
         ) {
             setShow(true);
-            console.log("rabbit");
-        } 
+        }
     }
 
     return (
         <>
-            <div className={flip} onClick={flipCard} onMouseUp={handleMouseUp} ref={rootEl}>
+            <div
+                className={flip}
+                onClick={flipCard}
+                onMouseUp={handleMouseUp}
+                ref={rootEl}
+            >
                 <img className={s.frontFace} src={img} alt={description}></img>
                 <img className={s.backFace} src={imgBack} alt="back"></img>
             </div>
@@ -61,7 +59,7 @@ const MemoryCard = ({ value, img, description, click, onClick, ...props }) => {
     );
 };
 
-const MemoryGame = () => {
+const FindCardGame = () => {
     const test = [
         {
             value: 0,
@@ -101,9 +99,9 @@ const MemoryGame = () => {
         },
     ];
 
-    let memoryCardElement = test.map((el, i) => {
+    let findCardElement = test.map((el, i) => {
         return (
-            <MemoryCard
+            <FindCard
                 key={i}
                 value={el.value}
                 img={el.img}
@@ -115,9 +113,9 @@ const MemoryGame = () => {
 
     return (
         <div className={s.wrapper}>
-            <div className={s.memoryGame}>{memoryCardElement}</div>
+            <div className={s.memoryGame}>{findCardElement}</div>
         </div>
     );
 };
 
-export default MemoryGame;
+export default FindCardGame;

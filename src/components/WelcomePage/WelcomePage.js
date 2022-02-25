@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-
 import "./WelcomePage.css";
 
-import MyBtn from "../MyBtn/MyBtn";
-import NeonText from "../NeonText/NeonText";
+import MyBtn from "../common/MyBtn/MyBtn";
+import NeonText from "../common/NeonText/NeonText";
 
 function WelcomePage() {
     const handleClick = () => {
@@ -22,14 +21,30 @@ function WelcomePage() {
     return (
         <div>
             <div className="neonWrapper">
-                <NeonText text="Welcome" neonColor={neonColorGreen} neonTxtColor={neonTxtColorGreen} />
-                <NeonText text="it's time" neonColor={neonColorGreen} neonTxtColor={neonTxtColorGreen} />
-                <NeonText text="to" neonColor={neonColorGreen} neonTxtColor={neonTxtColorGreen} />
-                <NeonText text="make choice" neonColor={neonColorGreen} neonTxtColor={neonTxtColorGreen} />
+                <NeonText
+                    text="Welcome"
+                    neonColor={neonColorGreen}
+                    neonTxtColor={neonTxtColorGreen}
+                />
+                <NeonText
+                    text="it's time"
+                    neonColor={neonColorGreen}
+                    neonTxtColor={neonTxtColorGreen}
+                />
+                <NeonText
+                    text="to"
+                    neonColor={neonColorGreen}
+                    neonTxtColor={neonTxtColorGreen}
+                />
+                <NeonText
+                    text="make choice"
+                    neonColor={neonColorGreen}
+                    neonTxtColor={neonTxtColorGreen}
+                />
             </div>
 
             <div className="myBtnWrapper">
-                <Link to="/one" className="firstBtn linkBtn">
+                <Link to="/redPill" className="firstBtn linkBtn">
                     <MyBtn
                         text={"..red pill.."}
                         btnColor={btnColorRed}
@@ -38,7 +53,7 @@ function WelcomePage() {
                     />
                 </Link>
 
-                <Link to="/conect" className="linkBtn">
+                <Link to="/bluePill" className="linkBtn">
                     <MyBtn
                         text={"..blue pill.."}
                         btnColor={btnColorTurquoise}
