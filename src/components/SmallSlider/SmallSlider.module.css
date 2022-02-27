@@ -66,6 +66,13 @@
     border: none;
 }
 
+@media (max-width: 768px) {
+    .mainContainer {
+        width: 310px;
+        font-size: 3vw;
+    }
+}
+
 
 
 @media (min-width: 1000px) {
