@@ -1,11 +1,15 @@
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import BluePill from "./components/BluePill/BluePill";
-import ConectPage from "./components/ConectPage/ConectPage";
-import FindCardGame from "./components/FindCardGame/FindCardGame";
-import RedPill from "./components/RedPill/RedPill";
+import Loading from "./components/Loading/Loading";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
+import RedPill from "./components/RedPill/RedPill";
+import BluePill from "./components/BluePill/BluePill";
+
+const ConectPage = React.lazy(() => import("./components/ConectPage/ConectPage"));
+const FindCardGame = React.lazy(() => import("./components/FindCardGame/FindCardGame"));
+const NewConection = React.lazy(() => import("./components/NewConection/NewConection"));
 
 function App() {
     return (
@@ -14,9 +18,14 @@ function App() {
                 <Route path="/" element={<WelcomePage />} />
                 <Route path="/redPill" element={<RedPill />} />
                 <Route path="/bluePill" element={<BluePill />} />
-                <Route path="/conect" element={<ConectPage />} />
-                <Route path="/findCardGame" element={<FindCardGame />} />                
             </Routes>
+            <Suspense fallback={<Loading />}>
+                <Routes>
+                    <Route path="/conect" element={<ConectPage />} />
+                    <Route path="/findCardGame" element={<FindCardGame />} />
+                    <Route path="/newConection" element={<NewConection />} />                    
+                </Routes>
+            </Suspense>
         </div>
     );
 }

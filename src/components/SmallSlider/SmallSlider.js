@@ -2,10 +2,9 @@ import React from "react";
 import { useEffect, useState, Children, cloneElement } from "react";
 import s from "./SmallSlider.module.css";
 
-let PAGE_WIDTH = 566;
+let PAGE_WIDTH = 650;
 
 const SmallSlider = ({ children }) => {
-
     const [size, setSize] = useState({
         x: window.innerWidth,
     });
@@ -16,10 +15,13 @@ const SmallSlider = ({ children }) => {
         });
 
     useEffect(() => (window.onresize = updateSize), []);
-    console.log(size.x)
 
-    if(size.x < 768){
-        PAGE_WIDTH = 310; 
+    if (size.x < 690) {
+        PAGE_WIDTH = 310;
+    }
+
+    if (size.x > 1300) {
+        PAGE_WIDTH = 1100;
     }
 
     const [pages, setPages] = useState([]);

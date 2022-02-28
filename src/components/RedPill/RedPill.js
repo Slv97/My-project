@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import s from "./RedPill.module.css";
 
@@ -13,9 +13,6 @@ const RedPill = () => {
     const neonColorRed = "245, 30, 30";
     const neonTxtColorRed = "#ffd4d4";
 
-    const neonColorGreen = "30, 245, 48";
-    const neonTxtColorGreen = "#c6ffe2";
-
     const ConnectionLost = useRef();
     const Load = useRef();
 
@@ -28,57 +25,27 @@ const RedPill = () => {
         return () => clearTimeout(timer);
     }, [Load, ConnectionLost]);
 
-    const [clickCount, setClick] = useState(0);
-    const [linkChange, setLinkChange] = useState(false);
-
-    const changeLink = () => {
-        if (clickCount >= 0) {
-            setLinkChange(true);
-        }
-
-        setClick(clickCount + 1);
-        Load.current.style.opacity = "1";
-    };
-
     return (
         <div>
-            <div ref={Load} className={s.neonWrapper}>
-                <NeonText
-                    text={"loading"}
-                    neonColor={neonColorGreen}
-                    neonTxtColor={neonTxtColorGreen}
-                />{" "}
+            <div ref={Load}>
                 <Loading />
             </div>
-
-            {linkChange ? (
-                <Link to="/conect" className="myBtnWrapper linkBtn">
+            <div ref={ConnectionLost} className={s.hideBlock}>
+                <div className="neonWrapper">
+                    <NeonText
+                        text={"sorry, connection lost"}
+                        neonColor={neonColorRed}
+                        neonTxtColor={neonTxtColorRed}
+                    />
+                </div>
+                <Link to="/newConection" className="myBtnWrapper linkBtn">
                     <MyBtn
                         text={"..try again.."}
                         btnColor={btnColorGreen}
                         txtHoverColor={txtHoverColorGreen}
-                        onClick={changeLink}
                     />
                 </Link>
-            ) : (
-                <div ref={ConnectionLost} className={s.hideBlock}>
-                    <div className="neonWrapper">
-                        <NeonText
-                            text={"sorry, connection lost"}
-                            neonColor={neonColorRed}
-                            neonTxtColor={neonTxtColorRed}
-                        />
-                    </div>
-                    <Link to="/redPill" className="myBtnWrapper linkBtn">
-                        <MyBtn
-                            text={"..try again.."}
-                            btnColor={btnColorGreen}
-                            txtHoverColor={txtHoverColorGreen}
-                            onClick={changeLink}
-                        />
-                    </Link>
-                </div>
-            )}
+            </div>
         </div>
     );
 };

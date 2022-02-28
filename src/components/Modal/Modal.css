@@ -34,25 +34,16 @@
 .btnClose {
     top: 10px;
     right: 30px;
-    font-size: 55px;
+    font-size: 3rem;
     position: absolute;
     z-index: 2;
     cursor: pointer;
     color: #fff;
 }
 
-@media (max-width: 768px) {
-    .modalContent {
-        padding: 52px 2px 0 2px;
-    }
-}
 
 @media (max-width: 768px) {
     .modalContent {
-        padding: 52px 36px 0 10px;
-    }
-
-    .btnClose {
-        font-size: 30px;
+        padding: 71px 4px 0 4px
     }
 }

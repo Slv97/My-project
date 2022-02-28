@@ -1,6 +1,6 @@
 .mainContainer {
-    height: 220px;
-    width: 566px;
+    height: 300px;
+    width: 650px;
     display: flex;
     align-items: center;
 }
@@ -14,7 +14,6 @@
 .allPagesContainer {
     height: 100%;
     display: flex;
-
     transition: translate;
     transition-property: transform;
     transition-duration: 300ms;
@@ -31,7 +30,7 @@
 .arrowL {
     cursor: pointer;
     border: none;
-    font-size: 6vw;
+    font-size: 5rem;
     background-color: inherit;
     padding-right: 4px;
     color: #fff;
@@ -52,7 +51,7 @@
     border-radius: 50%;
     box-sizing: border-box;
     margin-right: 8px;
-    margin-top: 4px;
+    margin-top: 10px;
     bottom: 0px;
 }
 
@@ -66,41 +65,15 @@
     border: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 690px) {
     .mainContainer {
         width: 310px;
-        font-size: 3vw;
+        height: 500px;
     }
 }
 
-
-
-@media (min-width: 1000px) {
+@media (min-width: 1300px) {
     .mainContainer {
-        height: 300px;
-    }
-}
-
-@media (min-width: 1540px) {
-    .mainContainer {
-        height: 400px;
-    }
-}
-
-@media (min-width: 1690px) {
-    .mainContainer {
-        height: 600px;
-    }
-}
-
-@media (min-width: 2050px) {
-    .mainContainer {
-        height: 800px;
-    }
-}
-
-@media (min-width: 2560px) {
-    .mainContainer {
-        height: 900px;
+        width: 1100px;
     }
 }
