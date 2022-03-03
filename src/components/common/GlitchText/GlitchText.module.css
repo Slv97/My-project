@@ -1,6 +1,6 @@
 .wrapper {
     color: #00ff00;
-    margin: 0 auto;
+    margin: 0 40%;
     width: 310px;
 }
 
@@ -21,6 +21,26 @@
         0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
         position: relative;
         animation: glitch 1500ms infinite;
+}
+
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 5vw;
+    }
+
+    .wrapper {
+        margin: 0 33%;
+    }
+}
+
+@media (max-width: 425px) {
+    .glitch {
+        font-size: 8vw;
+    }
+
+    .wrapper {
+        margin: 0 25%;
+    }
 }
 
 .glitch span {

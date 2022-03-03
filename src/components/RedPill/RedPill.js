@@ -1,10 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import s from "./RedPill.module.css";
 
 import Loading from "../Loading/Loading";
 import NeonText from "../common/NeonText/NeonText";
 import MyBtn from "../common/MyBtn/MyBtn";
+import useTimerForAnimation from "../../utils/useTimerForAnimation";
 
 const RedPill = () => {
     const btnColorGreen = "#00ff00";
@@ -16,14 +17,7 @@ const RedPill = () => {
     const ConnectionLost = useRef();
     const Load = useRef();
 
-    useEffect(() => {
-        const timer = setTimeout(function () {
-            ConnectionLost.current.style.opacity = "1";
-            Load.current.style.opacity = "0";
-        }, 2000);
-
-        return () => clearTimeout(timer);
-    }, [Load, ConnectionLost]);
+    useTimerForAnimation(ConnectionLost, Load)
 
     return (
         <div>
