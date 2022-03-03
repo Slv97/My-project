@@ -3,28 +3,29 @@ import { Link } from "react-router-dom";
 import s from "./NewConection.module.css";
 
 import Loading from "../Loading/Loading";
-import GlitchText from "../common/GlitchText/GlitchText";
+import GlitchText from "../common/GlitchEffects/GlitchText/GlitchText";
 import useTimerForAnimation from "../../utils/useTimerForAnimation";
+import GlitchBackground from "../common/GlitchEffects/GlitchBackground/GlitchBackground";
 
 const NewConection = () => {
-
     const ConnectionLost = useRef();
     const Load = useRef();
 
-    useTimerForAnimation(ConnectionLost, Load)
+    useTimerForAnimation(ConnectionLost, Load);
 
     return (
         <div>
-            <div ref={Load}>
-                <Loading />
-            </div>
+            <GlitchBackground>
+                <div ref={Load}>
+                    <Loading />
+                </div>
 
-            <div ref={ConnectionLost} className={s.hideBlock}>
-                <Link to="/conect" >
-                     <GlitchText text="..try again.." />
-                </Link>
-            </div>
-           
+                <div ref={ConnectionLost} className={s.hideBlock}>
+                    <Link to="/conect">
+                        <GlitchText text="..try again.." />
+                    </Link>
+                </div>
+            </GlitchBackground>
         </div>
     );
 };
