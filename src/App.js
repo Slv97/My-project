@@ -12,6 +12,9 @@ const FindCardGame = React.lazy(() => import("./components/FindCardGame/FindCard
 const NewConection = React.lazy(() => import("./components/NewConection/NewConection"));
 
 function App() {
+    // попробовать добавить webp - сжатые картинки для современных браузеров, пример:
+    //https://www.joshwcomeau.com/performance/embracing-modern-image-formats/
+    // transform translate -50%
     return (
         <div className="content">
             <Routes>

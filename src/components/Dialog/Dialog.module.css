@@ -13,6 +13,14 @@
     border-radius: 50%;
     padding-right: 20px;
 }
+/* @supports (
+    background-image: -webkit-image-set(url("../../assets/images/webp/curator.webp") type("images/webp"))
+) {
+    .photo {
+        background-image: url("../../assets/images/webp/curator.webp")
+                          type("images/webp");
+    }
+} */
 
 .text {
     font-size: 2.9rem;
