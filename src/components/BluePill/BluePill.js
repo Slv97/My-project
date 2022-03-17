@@ -2,9 +2,14 @@ import s from "./BluePill.module.css";
 
 import NeonText from "../common/NeonText/NeonText";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import MyBtn from "../common/MyBtn/MyBtn";
 
 const neonColorGreen = "70, 109, 236";
 const neonTxtColorGreen = "#c6edff";
+
+const btnColorYellow = "#fbff00";
+const txtHoverColorYellow = "#818a00";
 
 const BluePill = () => {
     // const dispatch = useDispatch()
@@ -26,6 +31,15 @@ const BluePill = () => {
                     neonColor={neonColorGreen}
                     neonTxtColor={neonTxtColorGreen}
                 />
+            </div>
+            <div className={s.btn}>
+                <Link to="/" className="myBtnWrapper linkBtn">
+                    <MyBtn
+                        text={"..once more.."}
+                        btnColor={btnColorYellow}
+                        txtHoverColor={txtHoverColorYellow}
+                    />
+                </Link>
             </div>
 
             {/* <div>
